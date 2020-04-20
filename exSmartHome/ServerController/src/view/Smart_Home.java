@@ -13,6 +13,7 @@ import sd_aula09_smartdoor.controller.SmartDoorInterface;
 import sd_aula09_smartdoor.controller.SmartDoorRMI;
 import sd_aula09_smarttv.controller.SmartTvInterface;
 import sd_aula09_smarttv.controller.SmartTvRMI;
+import sd_aula09_smarttv.view.SmartTVJFrame;
 import sd_aula09_waterheater.controller.AAInterface;
 import sd_aula09_waterheater.controller.AARMI;
 
@@ -25,6 +26,7 @@ public class Smart_Home extends javax.swing.JFrame {
     private final SmartTvInterface stvController;
 
     public Smart_Home() throws Exception {
+        
         initComponents();
 
         AARMI.main(null);
@@ -56,17 +58,17 @@ public class Smart_Home extends javax.swing.JFrame {
 
         //Aquecedor
         TemAtualAAjLabel.setVisible(false);
-        TempjButton.setVisible(false);
+        TempjButtonAA.setVisible(false);
         ValorTempAtualjLabel1.setVisible(false);
 
-        jTextField1.setVisible(false);
+        jTextTempAA.setVisible(false);
 
         //ArCondicionado
-        TemperaturaAtualjLabel1.setVisible(false);
+        TempAtualACjLabel1.setVisible(false);
         ValorTempAtualjLabel2.setVisible(false);
         jTextField2.setVisible(false);
 
-        TempjButton1.setVisible(false);
+        TempACjButton1.setVisible(false);
         WindjLabel.setVisible(false);
         ValorVentojLabel1.setVisible(false);
         WindjButton1.setVisible(false);
@@ -103,8 +105,20 @@ public class Smart_Home extends javax.swing.JFrame {
         SenhajButton = new javax.swing.JButton();
         SenhajTextField = new javax.swing.JTextField();
         FecharPortajButton1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        abaLuz = new javax.swing.JPanel();
+        PowerLuzjButton3 = new javax.swing.JButton();
+        IntensidadejLabel = new javax.swing.JLabel();
+        ValorIntensidadejLabel = new javax.swing.JLabel();
+        LigaDesligajLabel3 = new javax.swing.JLabel();
+        ValorLigaDesligajLabel4 = new javax.swing.JLabel();
+        IntensidadejButton = new javax.swing.JButton();
+        IntensidadejTextField1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         abaTV = new javax.swing.JPanel();
-        PowerjButton = new javax.swing.JButton();
+        PowerjButtonTV = new javax.swing.JButton();
         CanaljLabel = new javax.swing.JLabel();
         ValorCanaljLabel = new javax.swing.JLabel();
         VolumejLabel = new javax.swing.JLabel();
@@ -116,36 +130,33 @@ public class Smart_Home extends javax.swing.JFrame {
         VolumejButton1 = new javax.swing.JButton();
         VolumejTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        abaAr = new javax.swing.JPanel();
+        LigaDesligajLabel2 = new javax.swing.JLabel();
+        ValorLigaDesligajLabel3 = new javax.swing.JLabel();
+        PowerACjButton2 = new javax.swing.JButton();
+        TempAtualACjLabel1 = new javax.swing.JLabel();
+        ValorTempAtualjLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        TempACjButton1 = new javax.swing.JButton();
+        WindjLabel = new javax.swing.JLabel();
+        ValorVentojLabel1 = new javax.swing.JLabel();
+        WindjButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         abaAquecedor = new javax.swing.JPanel();
         LigaDesligajLabel1 = new javax.swing.JLabel();
         ValorLigaDesligajLabel2 = new javax.swing.JLabel();
         PowerAAjButton1 = new javax.swing.JButton();
         TemAtualAAjLabel = new javax.swing.JLabel();
         ValorTempAtualjLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        TempjButton = new javax.swing.JButton();
+        jTextTempAA = new javax.swing.JTextField();
+        TempjButtonAA = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        abaAr = new javax.swing.JPanel();
-        LigaDesligajLabel2 = new javax.swing.JLabel();
-        ValorLigaDesligajLabel3 = new javax.swing.JLabel();
-        PowerACjButton2 = new javax.swing.JButton();
-        TemperaturaAtualjLabel1 = new javax.swing.JLabel();
-        ValorTempAtualjLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        TempjButton1 = new javax.swing.JButton();
-        WindjLabel = new javax.swing.JLabel();
-        ValorVentojLabel1 = new javax.swing.JLabel();
-        WindjButton1 = new javax.swing.JButton();
-        abaLuz = new javax.swing.JPanel();
-        PowerjButton3 = new javax.swing.JButton();
-        IntensidadejLabel = new javax.swing.JLabel();
-        ValorIntensidadejLabel = new javax.swing.JLabel();
-        LigaDesligajLabel3 = new javax.swing.JLabel();
-        ValorLigaDesligajLabel4 = new javax.swing.JLabel();
-        IntensidadejButton = new javax.swing.JButton();
-        IntensidadejTextField1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("SmartHome");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 28)); // NOI18N
         jLabel1.setText("Seja bem vindo(a)!");
@@ -187,14 +198,18 @@ public class Smart_Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Home", abaHome);
 
+        SenhajLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         SenhajLabel.setText("Senha:");
 
         AppjLabel.setBackground(java.awt.Color.red);
+        AppjLabel.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         AppjLabel.setText("Smart Door");
 
+        ValorPortajLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         ValorPortajLabel1.setText("Fechada");
 
         SenhajButton.setBackground(java.awt.Color.white);
+        SenhajButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         SenhajButton.setText("Verificar Senha");
         SenhajButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,13 +217,21 @@ public class Smart_Home extends javax.swing.JFrame {
             }
         });
 
+        SenhajTextField.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+
         FecharPortajButton1.setBackground(java.awt.Color.white);
+        FecharPortajButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         FecharPortajButton1.setText("Fechar a Porta");
         FecharPortajButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FecharPortajButton1ActionPerformed(evt);
             }
         });
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/porta.png"))); // NOI18N
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel9.setText("Status:");
 
         javax.swing.GroupLayout abaPortaLayout = new javax.swing.GroupLayout(abaPorta);
         abaPorta.setLayout(abaPortaLayout);
@@ -219,76 +242,171 @@ public class Smart_Home extends javax.swing.JFrame {
                 .addGroup(abaPortaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(abaPortaLayout.createSequentialGroup()
                         .addComponent(AppjLabel)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(abaPortaLayout.createSequentialGroup()
-                        .addComponent(SenhajLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(abaPortaLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(abaPortaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaPortaLayout.createSequentialGroup()
+                        .addGroup(abaPortaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(abaPortaLayout.createSequentialGroup()
-                                .addComponent(SenhajTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-                                .addGap(62, 62, 62))
-                            .addGroup(abaPortaLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ValorPortajLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(abaPortaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SenhajButton, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FecharPortajButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 323, Short.MAX_VALUE)
+                                .addComponent(FecharPortajButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(abaPortaLayout.createSequentialGroup()
+                                .addComponent(SenhajLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SenhajTextField)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(SenhajButton)))
+                        .addGap(20, 20, 20))))
         );
         abaPortaLayout.setVerticalGroup(
             abaPortaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaPortaLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(abaPortaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(abaPortaLayout.createSequentialGroup()
-                        .addComponent(AppjLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ValorPortajLabel1))
-                    .addComponent(FecharPortajButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SenhajLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
+                .addGroup(abaPortaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AppjLabel)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(abaPortaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FecharPortajButton1)
+                    .addComponent(jLabel9)
+                    .addComponent(ValorPortajLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(abaPortaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SenhajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SenhajButton))
+                    .addComponent(SenhajButton)
+                    .addComponent(SenhajLabel))
                 .addGap(71, 71, 71))
         );
 
         jTabbedPane1.addTab("Porta", abaPorta);
 
-        PowerjButton.setBackground(java.awt.Color.white);
-        PowerjButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        PowerjButton.setText("Liga");
-        PowerjButton.addActionListener(new java.awt.event.ActionListener() {
+        PowerLuzjButton3.setBackground(java.awt.Color.white);
+        PowerLuzjButton3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        PowerLuzjButton3.setText("Liga");
+        PowerLuzjButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PowerjButtonActionPerformed(evt);
+                PowerLuzjButton3ActionPerformed(evt);
+            }
+        });
+
+        IntensidadejLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        IntensidadejLabel.setText("Intensidade:");
+
+        ValorIntensidadejLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        ValorIntensidadejLabel.setText("23");
+
+        LigaDesligajLabel3.setBackground(java.awt.Color.red);
+        LigaDesligajLabel3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        LigaDesligajLabel3.setText("Luz");
+
+        ValorLigaDesligajLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        ValorLigaDesligajLabel4.setText("Desligado");
+
+        IntensidadejButton.setBackground(java.awt.Color.white);
+        IntensidadejButton.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        IntensidadejButton.setText("Alterar Intensidade");
+        IntensidadejButton.setMargin(new java.awt.Insets(2, 5, 2, 5));
+        IntensidadejButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IntensidadejButtonActionPerformed(evt);
+            }
+        });
+
+        IntensidadejTextField1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/luminaria.png"))); // NOI18N
+
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel10.setText("Status:");
+
+        javax.swing.GroupLayout abaLuzLayout = new javax.swing.GroupLayout(abaLuz);
+        abaLuz.setLayout(abaLuzLayout);
+        abaLuzLayout.setHorizontalGroup(
+            abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaLuzLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(abaLuzLayout.createSequentialGroup()
+                        .addComponent(IntensidadejLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ValorIntensidadejLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(IntensidadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(abaLuzLayout.createSequentialGroup()
+                            .addComponent(LigaDesligajLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel7))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, abaLuzLayout.createSequentialGroup()
+                            .addComponent(jLabel10)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ValorLigaDesligajLabel4))))
+                .addGap(18, 18, 18)
+                .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(IntensidadejButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PowerLuzjButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        abaLuzLayout.setVerticalGroup(
+            abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaLuzLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LigaDesligajLabel3)
+                    .addComponent(jLabel7))
+                .addGap(10, 10, 10)
+                .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ValorLigaDesligajLabel4)
+                    .addComponent(PowerLuzjButton3)
+                    .addComponent(jLabel10))
+                .addGap(40, 40, 40)
+                .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IntensidadejButton)
+                    .addComponent(IntensidadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IntensidadejLabel)
+                    .addComponent(ValorIntensidadejLabel))
+                .addContainerGap(68, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Luz", abaLuz);
+
+        PowerjButtonTV.setBackground(java.awt.Color.white);
+        PowerjButtonTV.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        PowerjButtonTV.setText("Liga");
+        PowerjButtonTV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PowerjButtonTVActionPerformed(evt);
             }
         });
 
         CanaljLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        CanaljLabel.setText("Canal");
+        CanaljLabel.setText("Canal:");
 
         ValorCanaljLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        ValorCanaljLabel.setText("(12)");
+        ValorCanaljLabel.setText("12");
 
         VolumejLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        VolumejLabel.setText("Volume");
+        VolumejLabel.setText("Volume:");
 
         ValorVolumejLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        ValorVolumejLabel1.setText("(12)");
+        ValorVolumejLabel1.setText("12");
 
         LigaDesligajLabel.setBackground(java.awt.Color.red);
         LigaDesligajLabel.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         LigaDesligajLabel.setText("Smart TV");
 
         ValorLigaDesligajLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        ValorLigaDesligajLabel1.setText("Status: Desligado");
+        ValorLigaDesligajLabel1.setText("Desligado");
 
         CanaljButton.setBackground(java.awt.Color.white);
         CanaljButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         CanaljButton.setText("Alterar Canal");
+        CanaljButton.setMaximumSize(new java.awt.Dimension(117, 23));
+        CanaljButton.setMinimumSize(new java.awt.Dimension(117, 23));
+        CanaljButton.setPreferredSize(new java.awt.Dimension(117, 23));
         CanaljButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CanaljButtonActionPerformed(evt);
@@ -306,19 +424,22 @@ public class Smart_Home extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/televisao.png"))); // NOI18N
 
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel11.setText("Status:");
+
         javax.swing.GroupLayout abaTVLayout = new javax.swing.GroupLayout(abaTV);
         abaTV.setLayout(abaTVLayout);
         abaTVLayout.setHorizontalGroup(
             abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(abaTVLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(abaTVLayout.createSequentialGroup()
                         .addGroup(abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(abaTVLayout.createSequentialGroup()
                                 .addGroup(abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(CanaljLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(VolumejLabel, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(VolumejLabel)
+                                    .addComponent(CanaljLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(ValorCanaljLabel)
@@ -333,12 +454,15 @@ public class Smart_Home extends javax.swing.JFrame {
                             .addGroup(abaTVLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel5))))
-                    .addComponent(ValorLigaDesligajLabel1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, abaTVLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ValorLigaDesligajLabel1)))
                 .addGap(31, 31, 31)
                 .addGroup(abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PowerjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CanaljButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VolumejButton1))
+                    .addComponent(VolumejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PowerjButtonTV, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         abaTVLayout.setVerticalGroup(
@@ -348,33 +472,154 @@ public class Smart_Home extends javax.swing.JFrame {
                 .addGroup(abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(LigaDesligajLabel)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addGroup(abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PowerjButton)
-                    .addComponent(ValorLigaDesligajLabel1))
+                    .addComponent(ValorLigaDesligajLabel1)
+                    .addComponent(PowerjButtonTV)
+                    .addComponent(jLabel11))
                 .addGap(24, 24, 24)
                 .addGroup(abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CanaljLabel)
                     .addComponent(ValorCanaljLabel)
                     .addComponent(CanaljTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CanaljButton))
+                    .addComponent(CanaljButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(abaTVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VolumejLabel)
                     .addComponent(VolumejTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(VolumejButton1)
                     .addComponent(ValorVolumejLabel1))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("TV", abaTV);
+
+        LigaDesligajLabel2.setBackground(java.awt.Color.red);
+        LigaDesligajLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        LigaDesligajLabel2.setText("Ar Condicionado");
+
+        ValorLigaDesligajLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        ValorLigaDesligajLabel3.setText("Desligado");
+
+        PowerACjButton2.setBackground(java.awt.Color.white);
+        PowerACjButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        PowerACjButton2.setText("Liga");
+        PowerACjButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PowerACjButton2ActionPerformed(evt);
+            }
+        });
+
+        TempAtualACjLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TempAtualACjLabel1.setText("Temperatura Atual:");
+
+        ValorTempAtualjLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        ValorTempAtualjLabel2.setText("23");
+
+        jTextField2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+
+        TempACjButton1.setBackground(java.awt.Color.white);
+        TempACjButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        TempACjButton1.setText("Alterar");
+        TempACjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TempACjButton1ActionPerformed(evt);
+            }
+        });
+
+        WindjLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        WindjLabel.setText("Vento:");
+
+        ValorVentojLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        ValorVentojLabel1.setText("Desligado");
+
+        WindjButton1.setBackground(java.awt.Color.white);
+        WindjButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        WindjButton1.setText("Liga");
+        WindjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WindjButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ar-condicionado.png"))); // NOI18N
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel12.setText("Status:");
+
+        javax.swing.GroupLayout abaArLayout = new javax.swing.GroupLayout(abaAr);
+        abaAr.setLayout(abaArLayout);
+        abaArLayout.setHorizontalGroup(
+            abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaArLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(abaArLayout.createSequentialGroup()
+                        .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(abaArLayout.createSequentialGroup()
+                                .addComponent(LigaDesligajLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6))
+                            .addGroup(abaArLayout.createSequentialGroup()
+                                .addComponent(WindjLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ValorVentojLabel1))
+                            .addGroup(abaArLayout.createSequentialGroup()
+                                .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(abaArLayout.createSequentialGroup()
+                                        .addComponent(TempAtualACjLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ValorTempAtualjLabel2))
+                                    .addGroup(abaArLayout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ValorLigaDesligajLabel3)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 139, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaArLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(TempACjButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                                .addComponent(WindjButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(PowerACjButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+        abaArLayout.setVerticalGroup(
+            abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abaArLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LigaDesligajLabel2)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ValorLigaDesligajLabel3)
+                    .addComponent(PowerACjButton2)
+                    .addComponent(jLabel12))
+                .addGap(27, 27, 27)
+                .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TempAtualACjLabel1)
+                    .addComponent(ValorTempAtualjLabel2)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TempACjButton1))
+                .addGap(21, 21, 21)
+                .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(WindjLabel)
+                    .addComponent(ValorVentojLabel1)
+                    .addComponent(WindjButton1))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Ar", abaAr);
 
         LigaDesligajLabel1.setBackground(java.awt.Color.red);
         LigaDesligajLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         LigaDesligajLabel1.setText("Aquecedor de Água");
 
         ValorLigaDesligajLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        ValorLigaDesligajLabel2.setText("Status: Desligado");
+        ValorLigaDesligajLabel2.setText("Desligado");
 
         PowerAAjButton1.setBackground(java.awt.Color.white);
         PowerAAjButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -389,24 +634,21 @@ public class Smart_Home extends javax.swing.JFrame {
         TemAtualAAjLabel.setText("Temperatura Atual");
 
         ValorTempAtualjLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        ValorTempAtualjLabel1.setText("(23)");
+        ValorTempAtualjLabel1.setText("23");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TempjButtonAA.setBackground(java.awt.Color.white);
+        TempjButtonAA.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        TempjButtonAA.setText("Alterar");
+        TempjButtonAA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        TempjButton.setBackground(java.awt.Color.white);
-        TempjButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        TempjButton.setText("Alterar");
-        TempjButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TempjButtonActionPerformed(evt);
+                TempjButtonAAAAActionPerformed(evt);
             }
         });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aquecedor.png"))); // NOI18N
+
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel13.setText("Status:");
 
         javax.swing.GroupLayout abaAquecedorLayout = new javax.swing.GroupLayout(abaAquecedor);
         abaAquecedor.setLayout(abaAquecedorLayout);
@@ -416,25 +658,28 @@ public class Smart_Home extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(abaAquecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(abaAquecedorLayout.createSequentialGroup()
-                        .addComponent(LigaDesligajLabel1)
+                        .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaAquecedorLayout.createSequentialGroup()
-                        .addGroup(abaAquecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(ValorLigaDesligajLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(abaAquecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TempjButtonAA, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                            .addComponent(PowerAAjButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(abaAquecedorLayout.createSequentialGroup()
+                        .addGroup(abaAquecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(abaAquecedorLayout.createSequentialGroup()
+                                .addComponent(LigaDesligajLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4))
+                            .addGroup(abaAquecedorLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
                                 .addComponent(TemAtualAAjLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ValorTempAtualjLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TempjButton, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, abaAquecedorLayout.createSequentialGroup()
-                                .addComponent(ValorLigaDesligajLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(PowerAAjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18))))
+                                .addComponent(jTextTempAA, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 143, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         abaAquecedorLayout.setVerticalGroup(
             abaAquecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,200 +690,27 @@ public class Smart_Home extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(abaAquecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ValorLigaDesligajLabel2)
-                    .addComponent(PowerAAjButton1))
+                    .addComponent(PowerAAjButton1)
+                    .addComponent(jLabel13)
+                    .addComponent(ValorLigaDesligajLabel2))
                 .addGap(41, 41, 41)
                 .addGroup(abaAquecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TemAtualAAjLabel)
                     .addComponent(ValorTempAtualjLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TempjButton))
+                    .addComponent(jTextTempAA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TempjButtonAA))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Aquecedor", abaAquecedor);
 
-        LigaDesligajLabel2.setBackground(java.awt.Color.red);
-        LigaDesligajLabel2.setText("Ar Condicionado");
-
-        ValorLigaDesligajLabel3.setText("Desligado");
-
-        PowerACjButton2.setBackground(java.awt.Color.white);
-        PowerACjButton2.setText("Liga");
-        PowerACjButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PowerACjButton2ActionPerformed(evt);
-            }
-        });
-
-        TemperaturaAtualjLabel1.setText("Temperatura Atual");
-
-        ValorTempAtualjLabel2.setText("23");
-
-        TempjButton1.setBackground(java.awt.Color.white);
-        TempjButton1.setText("Alterar");
-        TempjButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TempjButton1ActionPerformed(evt);
-            }
-        });
-
-        WindjLabel.setText("Vento");
-
-        ValorVentojLabel1.setText("Desligado");
-
-        WindjButton1.setBackground(java.awt.Color.white);
-        WindjButton1.setText("Liga");
-        WindjButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WindjButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout abaArLayout = new javax.swing.GroupLayout(abaAr);
-        abaAr.setLayout(abaArLayout);
-        abaArLayout.setHorizontalGroup(
-            abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(abaArLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(abaArLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(ValorLigaDesligajLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(PowerACjButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(abaArLayout.createSequentialGroup()
-                        .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(abaArLayout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(ValorVentojLabel1))
-                            .addGroup(abaArLayout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(ValorTempAtualjLabel2)))
-                        .addGap(87, 87, 87)
-                        .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(WindjButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abaArLayout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(TempjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(abaArLayout.createSequentialGroup()
-                        .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TemperaturaAtualjLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(WindjLabel)
-                            .addComponent(LigaDesligajLabel2))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        abaArLayout.setVerticalGroup(
-            abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(abaArLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(LigaDesligajLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ValorLigaDesligajLabel3)
-                    .addComponent(PowerACjButton2))
-                .addGap(24, 24, 24)
-                .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(abaArLayout.createSequentialGroup()
-                        .addComponent(TemperaturaAtualjLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ValorTempAtualjLabel2))
-                    .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TempjButton1)))
-                .addGap(18, 18, 18)
-                .addComponent(WindjLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(abaArLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ValorVentojLabel1)
-                    .addComponent(WindjButton1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Ar", abaAr);
-
-        PowerjButton3.setBackground(java.awt.Color.white);
-        PowerjButton3.setText("Liga");
-        PowerjButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PowerjButton3ActionPerformed(evt);
-            }
-        });
-
-        IntensidadejLabel.setText("Intensidade");
-
-        ValorIntensidadejLabel.setText("23");
-
-        LigaDesligajLabel3.setBackground(java.awt.Color.red);
-        LigaDesligajLabel3.setText("Luz");
-
-        ValorLigaDesligajLabel4.setText("Desligado");
-
-        IntensidadejButton.setBackground(java.awt.Color.white);
-        IntensidadejButton.setText("Alterar Intensidade");
-        IntensidadejButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IntensidadejButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout abaLuzLayout = new javax.swing.GroupLayout(abaLuz);
-        abaLuz.setLayout(abaLuzLayout);
-        abaLuzLayout.setHorizontalGroup(
-            abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(abaLuzLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(abaLuzLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(abaLuzLayout.createSequentialGroup()
-                                .addComponent(ValorLigaDesligajLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(PowerjButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(abaLuzLayout.createSequentialGroup()
-                                .addComponent(ValorIntensidadejLabel)
-                                .addGap(56, 56, 56)
-                                .addComponent(IntensidadejTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
-                                .addGap(30, 30, 30)
-                                .addComponent(IntensidadejButton))))
-                    .addGroup(abaLuzLayout.createSequentialGroup()
-                        .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LigaDesligajLabel3)
-                            .addComponent(IntensidadejLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        abaLuzLayout.setVerticalGroup(
-            abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(abaLuzLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(LigaDesligajLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ValorLigaDesligajLabel4)
-                    .addComponent(PowerjButton3))
-                .addGap(24, 24, 24)
-                .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(abaLuzLayout.createSequentialGroup()
-                        .addComponent(IntensidadejLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ValorIntensidadejLabel))
-                    .addGroup(abaLuzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(IntensidadejButton)
-                        .addComponent(IntensidadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Luz", abaLuz);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -646,9 +718,8 @@ public class Smart_Home extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-   //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="AquecedorAgua">
     private void PowerAAjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PowerAAjButton1ActionPerformed
@@ -660,34 +731,34 @@ public class Smart_Home extends javax.swing.JFrame {
                 PowerAAjButton1.setText("Liga");
 
                 TemAtualAAjLabel.setVisible(false);
-                TempjButton.setVisible(false);
                 ValorTempAtualjLabel1.setVisible(false);
-                jTextField1.setVisible(false);
+                jTextTempAA.setVisible(false);
+                TempjButtonAA.setVisible(false);
 
             } else {
                 ValorLigaDesligajLabel2.setText("Ligado");
                 PowerAAjButton1.setText("Desliga");
 
                 TemAtualAAjLabel.setVisible(true);
-                TempjButton.setVisible(true);
                 ValorTempAtualjLabel1.setVisible(true);
-                jTextField1.setVisible(true);
+                jTextTempAA.setVisible(true);
+                TempjButtonAA.setVisible(true);
             }
         } catch (RemoteException ex) {
             Logger.getLogger(Smart_Home.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_PowerAAjButton1ActionPerformed
 
-    private void TempjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TempjButtonActionPerformed
+    private void TempjButtonAAAAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TempjButtonAAAAActionPerformed
 
         try {
-            aaController.changeTemperature(Float.valueOf(jTextField1.getText()));
+            aaController.changeTemperature(Float.valueOf(jTextTempAA.getText()));
 
             ValorTempAtualjLabel1.setText(String.valueOf(aaController.getAquecedor().getTemperature()));
         } catch (RemoteException ex) {
             Logger.getLogger(Smart_Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_TempjButtonActionPerformed
+    }//GEN-LAST:event_TempjButtonAAAAActionPerformed
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="ArCondicionado">
@@ -700,42 +771,42 @@ public class Smart_Home extends javax.swing.JFrame {
                 ValorLigaDesligajLabel3.setText("Desligado");
                 PowerACjButton2.setText("Liga");
 
-                TemperaturaAtualjLabel1.setVisible(false);
+                TempAtualACjLabel1.setVisible(false);
                 ValorTempAtualjLabel2.setVisible(false);
                 jTextField2.setVisible(false);
+                TempACjButton1.setVisible(false);
                 
-                TempjButton1.setVisible(false);
-                WindjButton1.setVisible(false);
                 WindjLabel.setVisible(false);
+                WindjButton1.setVisible(false);
                 ValorVentojLabel1.setVisible(false);
 
             } else {
                 ValorLigaDesligajLabel3.setText("Ligado");
                 PowerACjButton2.setText("Desliga");
 
-                TemperaturaAtualjLabel1.setVisible(true);
-                TempjButton1.setVisible(true);
+                TempAtualACjLabel1.setVisible(true);
                 ValorTempAtualjLabel2.setVisible(true);
                 jTextField2.setVisible(true);
-
-                WindjButton1.setVisible(true);
+                TempACjButton1.setVisible(true);
+                
                 WindjLabel.setVisible(true);
-                ValorVentojLabel1.setVisible(true);
+                WindjButton1.setVisible(true);
+                ValorVentojLabel1.setVisible(true);;
             }
         } catch (RemoteException ex) {
             Logger.getLogger(Smart_Home.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_PowerACjButton2ActionPerformed
 
-    private void TempjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TempjButton1ActionPerformed
+    private void TempACjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TempACjButton1ActionPerformed
 
         try {
-            acController.changeTemperature(Float.valueOf(jTextField1.getText()));
-            ValorTempAtualjLabel1.setText(String.valueOf(acController.getArCondicionado().getTemperature()));
+            acController.changeTemperature(Float.valueOf(jTextField2.getText()));
+            ValorTempAtualjLabel2.setText(String.valueOf(acController.getArCondicionado().getTemperature()));
         } catch (RemoteException ex) {
             Logger.getLogger(Smart_Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_TempjButton1ActionPerformed
+    }//GEN-LAST:event_TempACjButton1ActionPerformed
 
     private void WindjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WindjButton1ActionPerformed
 
@@ -756,33 +827,33 @@ public class Smart_Home extends javax.swing.JFrame {
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Ligth">
-    private void PowerjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PowerjButton3ActionPerformed
+    private void PowerLuzjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PowerLuzjButton3ActionPerformed
 
         try {
             liController.turnOffOn();
 
             if (!liController.getLight().isPowerButton()) {
-                ValorLigaDesligajLabel1.setText("Desligado");
-                PowerjButton.setText("Liga");
+                ValorLigaDesligajLabel4.setText("Desligado");
+                PowerLuzjButton3.setText("Liga");
 
                 IntensidadejLabel.setVisible(false);
-                IntensidadejButton.setVisible(false);
                 ValorIntensidadejLabel.setVisible(false);
                 IntensidadejTextField1.setVisible(false);
+                IntensidadejButton.setVisible(false);
 
             } else {
-                ValorLigaDesligajLabel1.setText("Ligado");
-                PowerjButton.setText("Desliga");
+                ValorLigaDesligajLabel4.setText("Ligado");
+                PowerLuzjButton3.setText("Desliga");
 
                 IntensidadejLabel.setVisible(true);
-                IntensidadejButton.setVisible(true);
                 ValorIntensidadejLabel.setVisible(true);
                 IntensidadejTextField1.setVisible(true);
+                IntensidadejButton.setVisible(true);
             }
         } catch (RemoteException ex) {
             Logger.getLogger(Smart_Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_PowerjButton3ActionPerformed
+    }//GEN-LAST:event_PowerLuzjButton3ActionPerformed
 
     private void IntensidadejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntensidadejButtonActionPerformed
 
@@ -822,14 +893,17 @@ public class Smart_Home extends javax.swing.JFrame {
             Logger.getLogger(Smart_Home.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_FecharPortajButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
+    //</editor-fold>
+    
     private void VolumejButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolumejButton1ActionPerformed
-
+        try {
+            this.stvController.changeVolume(Integer.parseInt(this.VolumejTextField.getText()));
+            ValorVolumejLabel1.setText(String.valueOf(stvController.getSmartTV().getVolume()));
+        } catch (RemoteException ex) {
+            Logger.getLogger(SmartTVJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_VolumejButton1ActionPerformed
+
 
     private void CanaljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CanaljButtonActionPerformed
         int channel = Integer.parseInt(this.CanaljTextField1.getText());
@@ -841,7 +915,7 @@ public class Smart_Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CanaljButtonActionPerformed
 
-    private void PowerjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PowerjButtonActionPerformed
+    private void PowerjButtonTVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PowerjButtonTVActionPerformed
         try {
             stvController.turnOffOn();
         } catch (RemoteException ex) {
@@ -851,29 +925,38 @@ public class Smart_Home extends javax.swing.JFrame {
         try {
             if (!stvController.getSmartTV().isPowerButton()) {
                 ValorLigaDesligajLabel1.setText("Desligado");
-                PowerjButton.setText("Liga");
-
-                visibilidadeComponentes();
+                PowerjButtonTV.setText("Liga");
+                
+                CanaljLabel.setVisible(false);
+                ValorCanaljLabel.setVisible(false);
+                CanaljTextField1.setVisible(false);
+                CanaljButton.setVisible(false);
+                
+                VolumejLabel.setVisible(false);
+                ValorVolumejLabel1.setVisible(false);
+                VolumejTextField.setVisible(false);
+                VolumejButton1.setVisible(false);
 
             } else {
                 ValorLigaDesligajLabel1.setText("Ligado");
-                PowerjButton.setText("Desliga");
+                PowerjButtonTV.setText("Desliga");
 
                 CanaljLabel.setVisible(true);
-                CanaljButton.setVisible(true);
                 ValorCanaljLabel.setVisible(true);
                 CanaljTextField1.setVisible(true);
-
-                VolumejButton1.setVisible(true);
+                CanaljButton.setVisible(true);
+                
                 VolumejLabel.setVisible(true);
                 ValorVolumejLabel1.setVisible(true);
                 VolumejTextField.setVisible(true);
+                VolumejButton1.setVisible(true);
             }
+            
         } catch (RemoteException ex) {
             Logger.getLogger(Smart_Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_PowerjButtonActionPerformed
-    //</editor-fold>
+    }//GEN-LAST:event_PowerjButtonTVActionPerformed
+    
 
     /**
      * @param args the command line arguments
@@ -929,15 +1012,15 @@ public class Smart_Home extends javax.swing.JFrame {
     private javax.swing.JLabel LigaDesligajLabel3;
     private javax.swing.JButton PowerAAjButton1;
     private javax.swing.JButton PowerACjButton2;
-    private javax.swing.JButton PowerjButton;
-    private javax.swing.JButton PowerjButton3;
+    private javax.swing.JButton PowerLuzjButton3;
+    private javax.swing.JButton PowerjButtonTV;
     private javax.swing.JButton SenhajButton;
     private javax.swing.JLabel SenhajLabel;
     private javax.swing.JTextField SenhajTextField;
     private javax.swing.JLabel TemAtualAAjLabel;
-    private javax.swing.JLabel TemperaturaAtualjLabel1;
-    private javax.swing.JButton TempjButton;
-    private javax.swing.JButton TempjButton1;
+    private javax.swing.JButton TempACjButton1;
+    private javax.swing.JLabel TempAtualACjLabel1;
+    private javax.swing.JButton TempjButtonAA;
     private javax.swing.JLabel ValorCanaljLabel;
     private javax.swing.JLabel ValorIntensidadejLabel;
     private javax.swing.JLabel ValorLigaDesligajLabel1;
@@ -961,13 +1044,21 @@ public class Smart_Home extends javax.swing.JFrame {
     private javax.swing.JPanel abaPorta;
     private javax.swing.JPanel abaTV;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextTempAA;
     // End of variables declaration//GEN-END:variables
 }

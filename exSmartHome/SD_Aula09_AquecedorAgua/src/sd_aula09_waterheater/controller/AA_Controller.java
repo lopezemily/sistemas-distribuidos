@@ -13,7 +13,7 @@ public class AA_Controller implements AAInterface {
 
     @Override
     public void turnOffOn() throws RemoteException {
-        System.out.println("turnOffOn foi chamado");
+        System.out.println("Aquecedor: turnOffOn foi chamado");
         if (aa.isPowerButton()) {
             aa.setPowerButton(false);
         } else {
@@ -23,13 +23,13 @@ public class AA_Controller implements AAInterface {
 
     @Override
     public void changeTemperature(float temp) throws RemoteException {
-        System.out.println("changeTemperature foi chamado");
+        System.out.println("Aquecedor: changeTemperature foi chamado");
         aa.setTemperature(temp);
     }
 
     @Override
     public AquecedorAgua getAquecedor() throws RemoteException {
-        System.out.println("getAquecedor foi chamado");
+        System.out.println("Aquecedor: getAquecedor foi chamado");
         return aa;
     }
 }
