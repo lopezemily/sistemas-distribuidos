@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sd_aula09_waterheater.view;
 
 import java.rmi.RemoteException;
@@ -11,19 +6,12 @@ import java.util.logging.Logger;
 import sd_aula09_waterheater.controller.AA_Controller;
 import sd_aula09_waterheater.model.AquecedorAgua;
 
-/**
- *
- * @author biizuka
- */
 public class AquecedorAguaJFrame extends javax.swing.JFrame {
 
     private AquecedorAgua aa = new AquecedorAgua();
     private AA_Controller aaController = new AA_Controller(aa);
 
-    /**
-     * Creates new form ArCondicionadoJFrame
-     */
-    public AquecedorAguaJFrame() {
+        public AquecedorAguaJFrame() {
         initComponents();
         TemperaturaAtualjLabel.setVisible(false);
         TempjButton.setVisible(false);
