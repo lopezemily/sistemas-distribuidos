@@ -895,6 +895,7 @@ public class Smart_Home extends javax.swing.JFrame {
     }//GEN-LAST:event_FecharPortajButton1ActionPerformed
     //</editor-fold>
     
+    //<editor-fold defaultstate="collapsed" desc="SmartTV">
     private void VolumejButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolumejButton1ActionPerformed
         try {
             this.stvController.changeVolume(Integer.parseInt(this.VolumejTextField.getText()));
@@ -956,7 +957,7 @@ public class Smart_Home extends javax.swing.JFrame {
             Logger.getLogger(Smart_Home.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_PowerjButtonTVActionPerformed
-    
+    //</editor-fold>
 
     /**
      * @param args the command line arguments
