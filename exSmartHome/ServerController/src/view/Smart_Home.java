@@ -631,7 +631,7 @@ public class Smart_Home extends javax.swing.JFrame {
         });
 
         TemAtualAAjLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        TemAtualAAjLabel.setText("Temperatura Atual");
+        TemAtualAAjLabel.setText("Temperatura Atual:");
 
         ValorTempAtualjLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         ValorTempAtualjLabel1.setText("23");
@@ -678,7 +678,7 @@ public class Smart_Home extends javax.swing.JFrame {
                                 .addComponent(ValorTempAtualjLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTextTempAA, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 143, Short.MAX_VALUE)))
+                        .addGap(0, 140, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         abaAquecedorLayout.setVerticalGroup(
