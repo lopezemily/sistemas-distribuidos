@@ -12,7 +12,7 @@ public class SmartDoor_Controller implements SmartDoorInterface {
     }
 
     @Override
-    public boolean checkPassword(String pwd) throws RemoteException {
+    public synchronized boolean checkPassword(String pwd) throws RemoteException {
         System.out.println("Porta: checkPassword foi chamado");
         if (pwd.equals(sd.getPassword())) {
             sd.setOpened(true);
@@ -22,13 +22,13 @@ public class SmartDoor_Controller implements SmartDoorInterface {
     }
 
     @Override
-    public void closeDoor() throws RemoteException {
+    public synchronized void closeDoor() throws RemoteException {
         System.out.println("Porta: closeDoor foi chamado");
         this.sd.setOpened(false);
     }
 
     @Override
-    public SmartDoor getSmartDoor() throws RemoteException {
+    public synchronized SmartDoor getSmartDoor() throws RemoteException {
         System.out.println("Porta: getSmartDoor foi chamado");
         return sd;
     }

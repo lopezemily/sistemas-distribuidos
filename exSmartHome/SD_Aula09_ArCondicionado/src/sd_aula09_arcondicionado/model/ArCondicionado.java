@@ -14,27 +14,27 @@ public class ArCondicionado implements Serializable {
         this.powerButton = false;
     }
 
-    public float getTemperature() {
+    public synchronized float getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(float temperature) {
+    public synchronized void setTemperature(float temperature) {
         this.temperature = temperature;
     }
 
-    public boolean isWind() {
+    public synchronized boolean isWind() {
         return wind;
     }
 
-    public void setWind(boolean wind) {
+    public synchronized void setWind(boolean wind) {
         this.wind = wind;
     }
 
-    public boolean isPowerButton() {
+    public synchronized boolean isPowerButton() {
         return powerButton;
     }
 
-    public void setPowerButton(boolean powerButton) {
+    public synchronized void setPowerButton(boolean powerButton) {
         this.powerButton = powerButton;
     }
 }

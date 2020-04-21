@@ -12,7 +12,7 @@ public class AC_Controller implements ACInterface {
     }
 
     @Override
-    public void turnOffOn() throws RemoteException {
+    public synchronized void turnOffOn() throws RemoteException {
         System.out.println("Ar condicionado: turnOffOn foi chamado");
         if (ac.isPowerButton()) {
             ac.setPowerButton(false);
@@ -22,7 +22,7 @@ public class AC_Controller implements ACInterface {
     }
 
     @Override
-    public void turnWindOffOn() throws RemoteException {
+    public synchronized void turnWindOffOn() throws RemoteException {
         System.out.println("Ar condicionado: turnWindOffOn foi chamado");
         if (ac.isWind()) {
             ac.setWind(false);
@@ -32,13 +32,13 @@ public class AC_Controller implements ACInterface {
     }
     
     @Override
-    public void changeTemperature(float temp) throws RemoteException{
+    public synchronized void changeTemperature(float temp) throws RemoteException{
         System.out.println("Ar condicionado: changeTemperature foi chamado");
         ac.setTemperature(temp);   
     }
 
     @Override
-    public ArCondicionado getArCondicionado() throws RemoteException {
+    public synchronized ArCondicionado getArCondicionado() throws RemoteException {
         System.out.println("Ar condicionado: getArCondicionado foi chamado");
         return ac;
     }

@@ -14,27 +14,27 @@ public class SmartTV implements Serializable {
         this.powerButton = false;
     }
 
-    public int getChannel() {
+    public synchronized int getChannel() {
         return channel;
     }
 
-    public void setChannel(int channel) {
+    public synchronized void setChannel(int channel) {
         this.channel = channel;
     }
 
-    public int getVolume() {
+    public synchronized int getVolume() {
         return volume;
     }
 
-    public void setVolume(int volume) {
+    public synchronized void setVolume(int volume) {
         this.volume = volume;
     }
 
-    public boolean isPowerButton() {
+    public synchronized boolean isPowerButton() {
         return powerButton;
     }
 
-    public void setPowerButton(boolean powerButton) {
+    public synchronized void setPowerButton(boolean powerButton) {
         this.powerButton = powerButton;
     }
 

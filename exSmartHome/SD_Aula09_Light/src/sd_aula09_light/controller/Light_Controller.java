@@ -12,7 +12,7 @@ public class Light_Controller implements LightInterface {
     }
         
     @Override
-    public void turnOffOn() throws RemoteException{
+    public synchronized void turnOffOn() throws RemoteException{
         System.out.println("Luz: turnOffOn foi chamado");
         if (lig.isPowerButton()) {
             lig.setPowerButton(false);
@@ -22,13 +22,13 @@ public class Light_Controller implements LightInterface {
     }
 
     @Override
-    public void changeIntensity(int intensity) throws RemoteException {
+    public synchronized void changeIntensity(int intensity) throws RemoteException {
         System.out.println("Luz: changeIntensity foi chamado");
         lig.setIntensity(intensity);
     }
 
     @Override
-    public Light getLight() throws RemoteException {
+    public synchronized Light getLight() throws RemoteException {
         System.out.println("Luz: getLight foi chamado");
         return lig;
     }    

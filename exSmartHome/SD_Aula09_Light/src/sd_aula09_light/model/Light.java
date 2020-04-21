@@ -12,19 +12,19 @@ public class Light implements Serializable {
         this.powerButton = false;
     }
 
-    public int getIntensity() {
+    public synchronized int getIntensity() {
         return intensity;
     }
 
-    public void setIntensity(int intensity) {
+    public synchronized void setIntensity(int intensity) {
         this.intensity = intensity;
     }
 
-    public boolean isPowerButton() {
+    public synchronized boolean isPowerButton() {
         return powerButton;
     }
 
-    public void setPowerButton(boolean powerButton) {
+    public synchronized void setPowerButton(boolean powerButton) {
         this.powerButton = powerButton;
     }
 

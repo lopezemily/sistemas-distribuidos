@@ -12,19 +12,19 @@ public class SmartDoor implements Serializable {
         password = "1234";
     }
 
-    public String getPassword() {
+    public synchronized String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public synchronized void setPassword(String password) {
         this.password = password;
     }
 
-    public boolean isOpened() {
+    public synchronized boolean isOpened() {
         return opened;
     }
 
-    public void setOpened(boolean opened) {
+    public synchronized void setOpened(boolean opened) {
         this.opened = opened;
     }
 
