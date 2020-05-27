@@ -2,7 +2,7 @@ package jokenpo.rmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import jokenpo.model.DadosJogador;
+import jokenpo.jogo.DadosJogador;
 
 //Oferece serviços para que os jogadores possam se registrar e encontrar adversarios
 public interface ServidorSessao extends Remote {

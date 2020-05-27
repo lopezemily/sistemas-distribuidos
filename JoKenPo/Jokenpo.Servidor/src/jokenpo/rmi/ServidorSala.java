@@ -2,8 +2,8 @@ package jokenpo.rmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import jokenpo.model.DadosJogador;
-import jokenpo.model.OpcJogada;
+import jokenpo.jogo.DadosJogador;
+import jokenpo.jogo.OpcJogada;
 
 //Oferece serviços para que dois jogados troquem jogadas
 public interface ServidorSala extends Remote {

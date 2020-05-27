@@ -3,8 +3,8 @@ package jokenpo.jogo;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Optional;
-import jokenpo.model.DadosJogador;
-import jokenpo.model.Match;
+import jokenpo.jogo.DadosJogador;
+import jokenpo.jogo.Match;
 import jokenpo.rmi.ServidorSessao;
 
 public class Sessao implements ServidorSessao {
