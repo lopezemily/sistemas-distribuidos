@@ -1,9 +1,10 @@
-package jokenpo.model;
+package jokenpo.jogo;
 
 import java.io.Serializable;
 
 public class DadosJogador implements Serializable {
 
+    private static final long serialVersionUID = 3402249574314499221L;
     private final String id;
     private final String nome;
     private int pontuacao;

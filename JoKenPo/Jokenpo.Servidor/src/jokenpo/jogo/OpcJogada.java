@@ -1,4 +1,4 @@
-package jokenpo.model;
+package jokenpo.jogo;
 
 import java.io.Serializable;
 

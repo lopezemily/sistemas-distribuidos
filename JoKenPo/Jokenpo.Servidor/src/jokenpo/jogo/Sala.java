@@ -2,8 +2,8 @@ package jokenpo.jogo;
 
 import java.rmi.RemoteException;
 import java.util.HashMap;
-import jokenpo.model.DadosJogador;
-import jokenpo.model.OpcJogada;
+import jokenpo.jogo.DadosJogador;
+import jokenpo.jogo.OpcJogada;
 import jokenpo.rmi.ServidorSala;
 
 public class Sala implements ServidorSala{

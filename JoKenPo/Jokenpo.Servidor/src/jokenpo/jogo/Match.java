@@ -1,4 +1,4 @@
-package jokenpo.model;
+package jokenpo.jogo;
 
 public class Match {
     private final String idJogador1;
